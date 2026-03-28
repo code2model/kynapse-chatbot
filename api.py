@@ -9,7 +9,7 @@ import json
 
 load_dotenv()
 
-app = FastAPI(title="Better Chatbot - Antigravity API")
+app = FastAPI(title="Kynapse API")
 
 app.add_middleware(
     CORSMiddleware,

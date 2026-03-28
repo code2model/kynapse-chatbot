@@ -33,7 +33,7 @@ Deterministic Python scripts (`execution/`) designed for absolute reliability. W
 
 1. Navigate to the root folder:
    ```bash
-   cd Antigravity
+   cd kynapse-chatbot
    ```
 2. Install dependencies:
    ```bash
