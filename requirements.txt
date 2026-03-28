@@ -3,3 +3,4 @@ uvicorn>=0.29.0
 python-dotenv>=1.0.1
 pydantic>=2.6.4
 cors>=1.0.1
+openai>=1.12.0
