@@ -1,16 +1,26 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-import os
-import subprocess
-from dotenv import load_dotenv
-from openai import AsyncOpenAI
 import json
 import sys
+import os
+import traceback
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print("Attempting to initialize Kynapse backend...", flush=True)
 
-load_dotenv(os.path.join(ROOT_DIR, ".env"))
+try:
+    from dotenv import load_dotenv
+    ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    load_dotenv(os.path.join(ROOT_DIR, ".env"))
+
+    from fastapi import FastAPI
+    from fastapi.middleware.cors import CORSMiddleware
+    from pydantic import BaseModel
+    import subprocess
+    from openai import AsyncOpenAI
+    
+    print("Imports completely successful!", flush=True)
+except Exception as e:
+    print("CRITICAL IMPORT CRASH:", flush=True)
+    traceback.print_exc(file=sys.stdout)
+    raise e
 
 app = FastAPI(title="Kynapse API")
 
