@@ -6,8 +6,11 @@ import subprocess
 from dotenv import load_dotenv
 from openai import AsyncOpenAI
 import json
+import sys
 
-load_dotenv()
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+load_dotenv(os.path.join(ROOT_DIR, ".env"))
 
 app = FastAPI(title="Kynapse API")
 
@@ -28,7 +31,7 @@ class ChatResponse(BaseModel):
 
 # Load Directive
 try:
-    with open("directives/chatbot_directive.md", "r") as f:
+    with open(os.path.join(ROOT_DIR, "directives/chatbot_directive.md"), "r") as f:
         SYSTEM_PROMPT = f.read()
 except FileNotFoundError:
     SYSTEM_PROMPT = "You are a helpful assistant."
@@ -44,8 +47,9 @@ client = AsyncOpenAI(
 def execute_calculator(expression: str) -> str:
     """Invokes the local calculator python script."""
     try:
+        script_path = os.path.join(ROOT_DIR, "execution/calculator.py")
         result = subprocess.run(
-            ["python", "execution/calculator.py", expression],
+            [sys.executable, script_path, expression],
             capture_output=True, text=True, check=True
         )
         return result.stdout.strip()
@@ -137,4 +141,4 @@ async def chat_endpoint(request: ChatRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("api.index:app", host="0.0.0.0", port=8000, reload=True)

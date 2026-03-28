@@ -55,7 +55,8 @@ export default function Chat() {
     setMessages(prev => [...prev, { id: tempId, role: 'assistant', content: '', isTyping: true }]);
 
     try {
-      const res = await axios.post('http://localhost:8000/api/chat', { message: userMsg.content });
+      const apiUrl = import.meta.env.DEV ? 'http://localhost:8000/api/chat' : '/api/chat';
+      const res = await axios.post(apiUrl, { message: userMsg.content });
       setMessages(prev => prev.map(msg => 
         msg.id === tempId ? { 
           id: tempId, 

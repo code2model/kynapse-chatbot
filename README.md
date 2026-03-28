@@ -45,7 +45,7 @@ Deterministic Python scripts (`execution/`) designed for absolute reliability. W
    ```
 4. Start the FastAPI server:
    ```bash
-   python api.py
+   python api/index.py
    ```
    *The backend will run on `http://localhost:8000`.*
 
