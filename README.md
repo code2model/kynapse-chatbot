@@ -2,7 +2,7 @@
 
 Kynapse is a modern, full-stack AI chatbot platform built for performance, beautifully fluid user experiences, and high-capability AI reasoning. Operating on a robust 3-layer architecture, Kynapse pairs a highly interactive, animated frontend with a deterministic, tool-executing backend.
 
-![Kynapse Flow Demo](docs/demo.webp)
+![Kynapse Flow Demo](docs/kynapse_demo.webp)
 
 ## Architecture Overview
 
