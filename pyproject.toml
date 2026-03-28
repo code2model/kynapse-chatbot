@@ -1,0 +1,7 @@
+[project]
+name = "kynapse"
+version = "0.1.0"
+description = "Kynapse API Backend"
+
+[project.scripts]
+app = "api.index:app"
