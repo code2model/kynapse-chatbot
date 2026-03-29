@@ -1,10 +1,8 @@
 {
-  "name": "kynapse-chatbot",
-  "version": "2.0.0",
+  "name": "kynapse-monorepo",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
-    "install-frontend": "cd frontend && npm install",
-    "build-frontend": "cd frontend && npm run build",
-    "build": "npm run install-frontend && npm run build-frontend"
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
   }
 }
