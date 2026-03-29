@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Key, FileText, Info, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowLeft, Key, FileText, Info, Sparkles } from 'lucide-react';
 import '../App.css';
 
 export default function SettingsPage() {
@@ -131,16 +131,8 @@ export default function SettingsPage() {
             <div className="settings-about-details">
               <p>Version 2.0.0</p>
               <p>Built by <strong>code2model</strong></p>
-              <p>Powered by Google Gemini 2.5 Flash</p>
+              <p>Powered by Google Gemini 2.0 Flash</p>
             </div>
-            <a
-              href="https://github.com/cgoinglove/better-chatbot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="settings-link"
-            >
-              <ExternalLink size={14} /> Inspired by Better Chatbot
-            </a>
           </div>
         </section>
       </motion.div>
