@@ -99,21 +99,7 @@ A distraction-free, high-performance chat interface:
 
 ## 📂 Project Structure
 
-```text
-├── docs/               # Documentation assets
-│   └── screenshots/    # UI screenshots for README
-├── Kynapse/            # Backend (FastAPI)
-│   ├── api/
-│   │   ├── execution/  # Tool implementation (Search, Python, etc.)
-│   │   ├── index.py    # Main API entrypoint
-│   │   └── ...
-├── frontend/           # Frontend (React + Vite)
-│   ├── src/
-│   │   ├── components/ # Reusable UI pieces
-│   │   ├── pages/      # Route-level pages (Dashboard, Chat, Settings)
-│   │   └── ...
-└── README.md           # You are here!
-```
+![Project Structure](docs/screenshots/structure.png)
 
 ---
 
