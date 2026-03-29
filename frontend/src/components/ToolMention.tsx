@@ -69,8 +69,8 @@ export default function ToolMention({ inputValue, onSelectTool, inputRef }: Tool
     };
 
     const input = inputRef.current;
-    input?.addEventListener('keydown', handleKeyDown);
-    return () => input?.removeEventListener('keydown', handleKeyDown);
+    input?.addEventListener('keydown', handleKeyDown as any);
+    return () => input?.removeEventListener('keydown', handleKeyDown as any);
   }, [isOpen, selectedIndex, filteredTools, onSelectTool, inputRef]);
 
   return (
